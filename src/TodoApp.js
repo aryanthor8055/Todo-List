@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import  {AppBar}  from '@mui/material';
 import {Toolbar} from '@mui/material';
-import Grid from '@mui/material';
+import {Grid} from '@mui/material';
 import TodoList from './TodoList';
 import TodoForm from './TodoForm';
 
@@ -31,8 +31,12 @@ const addTodo=newTodoText=>{
                 <Typography color='inherit'>TODOS WITH HOOKS</Typography>
             </Toolbar>
         </AppBar>
+        <Grid container justifyContent='center' style={{marginTop:"1rem"}}>
+            <Grid item xs={11} md={8} lg={4}>
         <TodoForm addTodo={addTodo}/>
         <TodoList todos={todos}/>
+        </Grid>
+        </Grid>
        </Paper>
 
       
