@@ -7,21 +7,21 @@ import { Divider } from '@mui/material'
 import Todo from './Todo'
 
 function TodoList({todos,removeTodo,toggleTodo,editTodo}){
+    if(todos.length)
     return (
+       
 <Paper>
     <List>
-    {todos.map(todo=>(
+    {todos.map((todo,i)=>(
         <>
-        <Todo task={todo.task}
-        id={todo.id}
+        <Todo 
+     {...todo}
         key={todo.id} 
-        completed={todo.completed}
-        // deleteTodo={deleteTodo}
         removeTodo={removeTodo}
         toggleTodo={toggleTodo}
         editTodo={editTodo}
         />
-        <Divider/>
+       {i<todos.length -1 && <Divider/>}
         </>
     )
 
@@ -29,5 +29,6 @@ function TodoList({todos,removeTodo,toggleTodo,editTodo}){
     </List>
 </Paper>
     )
+    return null;
 }
 export default TodoList
